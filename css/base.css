@@ -1,0 +1,160 @@
+/*@import "gloria-hallelujah.css";*/
+
+section,nav,header,aside,h1,h2,h3,h4,h5,h6,hgroup,footer,ul,li,main { display: block; padding: 0; margin: 0; }
+body { padding: 0; margin: 0;  position: relative; background: #ffa600 url("../images/fondo.png"); font-family: "gloria_hallelujahregular"; line-height: 150%; color:#fff; }
+li { float: left; }
+main { width: 1200px; margin: 0 auto; }
+
+footer {
+	padding: 50px 0;
+	text-align: center;
+	display: inline-block;
+}
+
+
+p,h1,h2,h3,h4,h5,h6 {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	display: inline-block;
+	text-shadow: 1px 2px 1px rgba(0,0,0,.4);
+}
+
+#content {
+	width: 100%;
+	min-height: 200px;
+	/*padding-top: 214px;*/
+	float: left;
+}
+
+.view {
+	opacity: 1;
+}
+
+.assets {
+	background: url("../images/assets.png");
+}
+
+
+/* start generic */
+.overlay {
+	top: 0;
+	left: 0;
+	display: inline-block;
+	background-color: rgba(0,0,0,.4);
+	position: absolute;
+}
+
+/* end generic */
+
+/* Generic animations */
+
+@-webkit-keyframes pulmon {
+    from {
+    	-ms-transform: scale(1); /* IE 9 */
+    	-webkit-transform: scale(1); /* Chrome, Safari, Opera */
+    	transform: scale(1); /* Standard syntax */
+    }
+   	to {
+   		-ms-transform: scale(1.1); /* IE 9 */
+    	-webkit-transform: scale(1.1); /* Chrome, Safari, Opera */
+    	transform: scale(1.1); /* Standard syntax */
+    }
+}
+
+@keyframes pulmon {
+    from {
+    	-ms-transform: scale(1); /* IE 9 */
+    	-webkit-transform: scale(1); /* Chrome, Safari, Opera */
+    	transform: scale(1); /* Standard syntax */
+    }
+   	to {
+   		-ms-transform: scale(1.1); /* IE 9 */
+    	-webkit-transform: scale(1.1); /* Chrome, Safari, Opera */
+    	transform: scale(1.1); /* Standard syntax */
+    }
+}
+/* End generic animations */
+
+/*
+p.content-description {
+	width: 630px;
+	padding: 20px 285px;
+	font-size: 17px;
+}
+
+nav#nav-files {
+	text-align: center;
+}
+
+nav#nav-files ul {
+	display: inline-block;
+}
+
+
+#wrapper-form-files {
+	width: 812px;
+	height: 537px;
+	background-image: url("../images/docentes/fondo-formulario-docentes.png");
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	margin:auto;
+}
+
+#wrapper-form-files .btn-close {
+	width: 50px;
+	height: 44px;
+	position: absolute;
+	right: 20px;
+	top: 0;
+	background: url("../images/docentes/btn-cerrar.png");
+}
+
+#wrapper-form-files .btn-enviar {
+	width: 195px;
+	height: 80px;
+	position: absolute;
+	right: 176px;
+	bottom: 27px;
+	background: url("../images/docentes/texto-descargar.png");
+}
+
+#wrapper-form-files #wrapper-type-file {
+	width: 221px;
+	height: 330px;
+	position: absolute;
+	left: 54px;
+	top: 75px;
+	background: url("../images/docentes/menu-complemento-pintura.png");
+}
+
+#file-form {
+	position: absolute;
+	width: 250px;
+	height: 324px;
+	left: 463px;
+	top: 83px;
+}
+
+#file-form .list-file-form {
+	display: inline-block;
+	width: 100%;
+}
+
+#file-form .list-file-form .item-file-form{
+	width: 100%;
+	margin-bottom: 14px;
+}
+
+#file-form .list-file-form .item-file-form input {
+	font-family: "gloria_hallelujahregular";
+	width: 100%;
+	height: 30px;
+border: 1px solid rgba(0,0,0,.1);
+border-radius: 7px;
+font-size: 14px;
+}
+*/

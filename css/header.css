@@ -1,0 +1,121 @@
+#wrapper-main-header {
+	width: 1200px;
+	height: 200px;
+	/*position: fixed;
+	z-index: 99999;*/
+}
+
+#main-header {
+	text-align: center;
+}
+
+#main-header #main-nav, #main-header #main-nav ul {
+	display: inline-block;
+	width: 100%;
+}
+
+.item-main-nav {
+	position: absolute;	
+}
+
+.item-main-nav.main-logo {
+	left: 0;
+	right: 0;
+}
+
+.item-main-nav.btn-inicio {
+	left: 200px;
+}
+
+
+.item-main-nav.btn-productos {
+	left: 385px;
+}
+
+.item-main-nav.btn-docentes {
+	right: 385px;
+}
+
+.item-main-nav.btn-contacto {
+	right: 200px;
+}
+
+.item-main-nav .wrapper-item-main-nav {
+	position: relative;
+	min-width: 175px;
+	min-height: 80px;
+	text-align: center;
+}
+
+.item-main-nav.main-logo .wrapper-item-main-nav {
+	min-width: 244px;
+}
+
+.item-main-nav .wrapper-item-main-nav .item-line, 
+.item-main-nav .wrapper-item-main-nav .section-name,
+.item-main-nav.main-logo .wrapper-item-main-nav img {
+	margin: 0 auto;
+}
+
+.item-main-nav .wrapper-item-main-nav .item-line {
+	width: 2px;
+	min-height:30px;	
+	background-color: rgba(0,0,0,.35);
+}
+
+.item-main-nav .wrapper-item-main-nav .section-name {
+	font-size: 19pt;
+	color:#0066ff;
+	text-shadow: 2px 2px 4px rgba(255,255,255,1),-2px -2px 4px rgba(255,255,255,1),2px 2px 4px rgba(255,255,255,1),-2px -2px 4px rgba(255,255,255,1),2px 2px 4px rgba(255,255,255,1),-2px -2px 4px rgba(255,255,255,1),2px 2px 4px rgba(255,255,255,1),-2px -2px 4px rgba(255,255,255,1),2px 2px 4px rgba(255,255,255,1),-2px -2px 4px rgba(255,255,255,1),2px 2px 4px rgba(255,255,255,1),-2px -2px 4px rgba(255,255,255,1),2px 2px 4px rgba(255,255,255,1),-2px -2px 4px rgba(255,255,255,1),2px 2px 4px rgba(255,255,255,1),-2px -2px 4px rgba(255,255,255,1),2px 2px 4px rgba(255,255,255,1),-2px -2px 4px rgba(255,255,255,1),2px 2px 4px rgba(255,255,255,1),-2px -2px 4px rgba(255,255,255,1),2px 2px 4px rgba(255,255,255,1),-2px -2px 4px rgba(255,255,255,1), 1px -3px 1px rgba(255,255,255,1),-1px 2px 10px rgba(255,255,255,1) ;
+	margin-top: -20px;
+	display: inline-block;
+	cursor: pointer;
+	-webkit-transition: -webkit-transform .3s;
+    transition: transform .3s;
+}
+
+.item-main-nav .wrapper-item-main-nav .section-name:hover {
+	-webkit-transform:scale(1.25) !important;
+	transform:scale(1.25) !important;
+}
+
+.item-main-nav.btn-inicio .wrapper-item-main-nav .item-line,
+.item-main-nav.btn-contacto .wrapper-item-main-nav .item-line {
+	height: 210px;
+}
+
+.item-main-nav.btn-inicio .wrapper-item-main-nav .section-name,
+.item-main-nav.btn-docentes .wrapper-item-main-nav .section-name {
+	transform:rotate(-5deg);
+}
+
+.item-main-nav.btn-productos .wrapper-item-main-nav .section-name,
+.item-main-nav.btn-contacto .wrapper-item-main-nav .section-name {
+	transform:rotate(5deg);
+}
+
+.item-main-nav.btn-productos .wrapper-item-main-nav .item-line,
+.item-main-nav.btn-docentes .wrapper-item-main-nav .item-line {
+	height: 160px;
+}
+
+.item-main-nav.main-logo {
+	padding: 0 20px;
+	width: 300px;
+	height: 270px;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+.item-main-nav.main-logo .wrapper-item-main-nav .item-line {
+	height: 110px;
+}
+
+.item-main-nav.main-logo .wrapper-item-main-nav img {
+	margin-top:-5px;
+	/*-webkit-animation: pulmon 2s linear 2s infinite alternate;
+    animation: pulmon 2s linear 2s infinite alternate;*/
+}
+
+

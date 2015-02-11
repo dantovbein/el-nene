@@ -1,0 +1,208 @@
+.wrapper-lastest-releases {
+	text-align: center;
+	background-image: url("./images/fondo-papel.png");
+	background-repeat: no-repeat;
+	height: 1302px;
+	position: relative;
+}
+
+.wrapper-lastest-releases ul.list-releases {
+	display: inline-block;
+	margin-top: 182px;
+}
+
+.wrapper-lastest-releases ul.list-releases li {
+	display: inline-block;
+	float: left;
+	/*padding-right: 25px;*/
+}
+
+.wrapper-lastest-releases ul.list-releases li:last-child {
+	padding-right: 0;
+}
+
+.item-new-release {
+	position: relative;
+	width: 300px;
+	height: 540px;
+}
+
+.wrapper-release-description {
+	width: 230px;
+	height: 230px;
+	border:5px #fff;
+	border-radius: 165px;
+	/*background-image:url("./images/fondo-circulo-release.png");*/
+	background-repeat: repeat; 	
+	border:10px solid rgba(255,255,255,1);
+	text-align: center;
+	padding: 20px;
+	position: absolute;
+	top: 184px;
+	left: 5px;
+	box-shadow:3px 3px 25px rgba(0,0,0,0.3);
+}
+
+
+.item-new-release.product-origami .wrapper-release-description {
+	background-color: rgba(65,145,214,1);
+}
+.item-new-release.product-titeres .wrapper-release-description {
+	background-color: rgba(232,180,51,1);
+}
+.item-new-release.product-pintura .wrapper-release-description {
+	background-color: rgba(210,45,46,1);
+}
+.item-new-release.product-figuras .wrapper-release-description {
+	background-color: rgba(107,202,37,1);
+}
+
+
+.wrapper-release-description h1 {
+	font-size: 11pt;
+	word-break: break-word;
+	line-height: 13pt;
+}
+
+.wrapper-release-description p {
+	font-size: 9pt;
+	line-height: 14pt;
+	word-break: break-word;
+}
+
+.wrapper-accesories {
+	position: relative;
+}
+
+.wrapper-accesories .accesory {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.product-origami .accesory.p1,
+.product-titeres .accesory.p1,
+.product-pintura .accesory.p1 {
+	top:0;
+	left: 0;
+}
+
+.product-figuras .accesory.p1 {
+	top: 0;
+	left: 42px;
+}
+
+.product-origami .accesory.p2,
+.product-titeres .accesory.p2,
+.product-pintura .accesory.p2,
+.product-figuras .accesory.p2 {
+	top:80px;
+	left: 135px;
+}
+
+.product-origami .accesory.p3,
+.product-titeres .accesory.p3,
+.product-pintura .accesory.p3,
+.product-pintura .accesory.p4 {
+	z-index: 999;
+}
+
+.product-origami .accesory.p3 {
+	top:424px;
+	left: 128px;
+}
+
+.product-titeres .accesory.p3 {
+	top:413px;
+	left: 58px;
+}
+
+.product-pintura .accesory.p3 {
+	top:359px;
+	left: -10px;
+}
+
+.product-pintura .accesory.p4 {
+	top:421px;
+	left: 148px;
+}
+
+.title-nuevos-lanzamientos {
+	width: 486px;
+	height: 138px;
+	background-position: -1840px -30px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top:25px;
+	margin: auto;
+   	/*-webkit-animation: anim-title-nuevos-lanzamientos 1s linear 2s infinite alternate;
+    animation: anim-title-nuevos-lanzamientos 1s linear 2s infinite alternate;*/
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes anim-title-nuevos-lanzamientos {
+    from {opacity: 1;}
+    to {opacity: .4;}
+}
+
+/* Standard syntax */
+@keyframes anim-title-nuevos-lanzamientos {
+    from {opacity: 1;}
+    to {opacity: .4;}
+}
+
+
+.title-mini-artistas {
+	width: 409px;
+	height: 102px;
+	background-position: -1840px -198px;
+	position: absolute;
+	left:660px;
+	top:667px;
+	/*-webkit-animation: pulmon 2s linear 2s infinite alternate;
+    animation: pulmon 2s linear 2s infinite alternate;*/
+}
+
+.title-se-agrando-la-familia {
+	width: 257px;
+	height: 133px;
+	background-position: -1843px -328px;
+	position: absolute;
+	left:45px;
+	top:1120px;
+	/*-webkit-animation: pulmon 2s linear 2s infinite alternate;
+    animation: pulmon 2s linear 2s infinite alternate;*/
+}
+
+.prod {
+	position: absolute;
+}
+
+.prod-block-color {
+	left: 30px;
+	top: 890px;
+}
+
+.prod-block-blanco {
+	left: 305px;
+	top: 1050px;
+	z-index: 999;
+}
+
+.prod-block-negro {
+	left: 472px;
+	top: 890px;
+}
+
+.prod-cartulina-fantasia {
+	left: 705px;
+	top: 1000px;
+	z-index: 999;
+}
+
+.prod-papel-madera {
+	left: 873px;
+	top: 890px;
+}
+
