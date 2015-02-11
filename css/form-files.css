@@ -4,11 +4,32 @@
 	background-position: -1194px -1446px;
 }
 
-.popup-form-files .btn-close {
-	width: 44px;
-	height: 44px;
-	background-position: -16px -676px;
+.popup-form-files .wrapper-icon-file {
+	width: 290px;
+	
+}
+
+.popup-form-files .view-form-file {
+	width: 500px;
+}
+
+
+.popup-form-files .wrapper-icon-file,
+.popup-form-files .view-form-file {
+	height: 450px;
+	position: relative;
+	float: left;	
+}
+
+.popup-form-files .wrapper-icon-file .icon-pdf-file {
+	left: 0;
 	right: 0;
 	top: 0;
-	position: absolute;
+	bottom: 0;
+	margin: auto;
+	cursor: auto;
+}
+
+.popup-form-files h1 {
+	
 }

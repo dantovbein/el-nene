@@ -17,8 +17,8 @@ Profesors.prototype.addHandlers = function(){
 	$(this.node).find(".wrapper-pdf-files").find(".icon-pdf-file").click( { context:this }, this.getFile );
 }
 
-Profesors.prototype.getFile = function(){
+Profesors.prototype.getFile = function(e){
 	utils.getOverlay();
-	var formFiles = new FormFiles({ container:$("body") });
+	var formFiles = new FormFiles({ container:$("body"),pdfFIleID:$(this).data("file") });
 	formFiles.initialize();
 }

@@ -1,7 +1,7 @@
 /*@import "gloria-hallelujah.css";*/
 
 section,nav,header,aside,h1,h2,h3,h4,h5,h6,hgroup,footer,ul,li,main { display: block; padding: 0; margin: 0; }
-body { padding: 0; margin: 0;  position: relative; background: #ffa600 url("../images/fondo.png"); font-family: "gloria_hallelujahregular"; line-height: 150%; color:#fff; }
+body { padding: 0; margin: 0;  position: relative; background: #ffa600 url("../images/fondo-patron.jpg"); font-family: "gloria_hallelujahregular"; line-height: 150%; color:#fff; }
 li { float: left; }
 main { width: 1200px; margin: 0 auto; }
 
@@ -35,6 +35,20 @@ p,h1,h2,h3,h4,h5,h6 {
 	background: url("../images/assets.png");
 }
 
+.btn {
+	cursor: pointer;
+	display: inline-block;
+}
+
+.popup .btn-close {
+	width: 44px;
+	height: 44px;
+	background-position: -16px -676px;
+	right: 0;
+	top: 0;
+	position: absolute;
+	z-index: 9999;
+}
 
 /* start generic */
 .overlay {
@@ -43,6 +57,10 @@ p,h1,h2,h3,h4,h5,h6 {
 	display: inline-block;
 	background-color: rgba(0,0,0,.4);
 	position: absolute;
+}
+
+.generic-title {
+	font-family: "blurmediumregular";
 }
 
 /* end generic */

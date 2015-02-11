@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'blurmediumregular';
+    src: url('./fonts/blm_____-webfont.eot');
+    src: url('./fonts/blm_____-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/blm_____-webfont.woff2') format('woff2'),
+         url('./fonts/blm_____-webfont.woff') format('woff'),
+         url('./fonts/blm_____-webfont.ttf') format('truetype'),
+         url('./fonts/blm_____-webfont.svg#blurmediumregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

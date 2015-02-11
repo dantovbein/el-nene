@@ -14,7 +14,7 @@
 	background: transparent url("./images/fondo-contenedor-pdf-2.png");
 }
 
-.wrapper-pdf-files .icon-pdf-file {
+.icon-pdf-file {
 	cursor: pointer;
 	position: absolute;
 	width: 267px;
@@ -28,45 +28,45 @@
 	transform:scale(1.1);
 }
 
-.wrapper-pdf-files .icon-pdf-file[data-file="1"],
-.wrapper-pdf-files .icon-pdf-file[data-file="2"],
-.wrapper-pdf-files .icon-pdf-file[data-file="3"],
-.wrapper-pdf-files .icon-pdf-file[data-file="4"] {
+.icon-pdf-file[data-file="1"],
+.icon-pdf-file[data-file="2"],
+.icon-pdf-file[data-file="3"],
+.icon-pdf-file[data-file="4"] {
 	width: 225px;
 }
 
-.wrapper-pdf-files .icon-pdf-file[data-file="1"] {
+.icon-pdf-file[data-file="1"] {
 	background-position: -16px -348px;
 	left: 42px;
 	top: 85px;
 }
 
-.wrapper-pdf-files .icon-pdf-file[data-file="2"] {
+.icon-pdf-file[data-file="2"] {
 	background-position: -292px -348px;
 	left: 320px;
 	top: 38px;
 }
 
-.wrapper-pdf-files .icon-pdf-file[data-file="3"] {
+.icon-pdf-file[data-file="3"] {
 	background-position: -562px -348px;
 	right: 320px;
 	top: 104px;
 }
 
-.wrapper-pdf-files .icon-pdf-file[data-file="4"] {
+.icon-pdf-file[data-file="4"] {
 	background-position: -834px -348px;
 	right: 42px;
 	top: 72px;
 }
 
-.wrapper-pdf-files .icon-pdf-file[data-file="5"] {
+.icon-pdf-file[data-file="5"] {
 	width: 262px;
 	background-position: -16px -34px;
 	left: 75px;
 	top: 100px;
 }
 
-.wrapper-pdf-files .icon-pdf-file[data-file="6"] {
+.icon-pdf-file[data-file="6"] {
 	width: 232px;
 	background-position: -292px -34px;
 	left: 470px;
