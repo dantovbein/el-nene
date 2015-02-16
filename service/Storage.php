@@ -1,15 +1,15 @@
 <?php
 class Storage {
 	
-	/*public $host = "localhost";
+	public $host = "localhost";
 	public $server = "root";
 	public $password = "";
-	public $dataBase = "elnene";*/
+	public $dataBase = "elnene";
 
-	public $host = "elnene.db.10915528.hostedresource.com";
+	/*public $host = "elnene.db.10915528.hostedresource.com";
 	public $server = "elnene";
 	public $password = "Estrada2014Aesa@";
-	public $dataBase = "elnene";
+	public $dataBase = "elnene";*/
 	
 	private $sql;
 
@@ -24,47 +24,42 @@ class Storage {
 		mysql_close($this->sql);
 	}
 
-	public function insertProfesor($data) {
+	public function addUser($data) {
 		$this->connect();
-
-		/*$query = 'SELECT * FROM vendors WHERE vendor_user_name="' . $user . '" AND vendor_password="' . $password . '"';
+		$query = 'INSERT INTO USERS (USER_EMAIL,USER_NAME,USER_LAST_NAME,USER_SCHOOL,USER_ADDRESS,USER_CITY,USER_SUBJECT) VALUES ("' . $data['userEmail'] . '","' . $data['userName'] . '","' . $data['userLastName'] . '","' . $data['userSchool'] . '","' . $data['userAddress'] . '","' . $data['userCity'] . '","' . $data['userSubject'] . '")';
 		$result = mysql_query($query);
-		$row = mysql_fetch_assoc($result);
-
-		$dataQuery = array();
-		$obj->idVendor = $row['id_vendor'];
-		$obj->idDevice = $row['id_device'];
-		$obj->user = $row['vendor_user_name'];
-		$obj->password = $row['vendor_password'];
-		$obj->fullName = $row['vendor_full_name'];
-		$obj->code = $row['vendor_unlock_code'];
-		array_push($dataQuery, $obj);
-		
-		echo json_encode($dataQuery);
-		$this->close();	*/
-	}
-
-	public function getProfesor() {
-		$this->connect();
-
-		$query = 'SELECT * FROM DOCENTES';
-		$result = mysql_query($query);
-		/*$row = mysql_fetch_assoc($result);
-
-		$dataQuery = array();
-		$obj->idVendor = $row['id_vendor'];
-		$obj->idDevice = $row['id_device'];
-		$obj->user = $row['vendor_user_name'];
-		$obj->password = $row['vendor_password'];
-		$obj->fullName = $row['vendor_full_name'];
-		$obj->code = $row['vendor_unlock_code'];
-		array_push($dataQuery, $obj);
-		
-		echo json_encode($dataQuery);*/
-		printf($result);
+		echo $result;
 		$this->close();	
 	}
 
+	public function checkEmailRegistered($data) {
+		$this->connect();
+		$query = 'SELECT * FROM USERS WHERE USER_EMAIL="' . $data['userEmail'] . '"';
+		$result = mysql_query($query);
+		$data = array();
+		while($row = mysql_fetch_array($result)) {
+			$obj = new stdClass;
+			$obj->userEmail = $row['USER_EMAIL'];
+			array_push($data, $obj);
+		}
+		echo json_encode($data);
+		$this->close();	
+	}
 
+	public function getFile($data){
+		$this->connect();
+		$query = 'SELECT * FROM FILES WHERE FILE_ID="' . $data['fileId'] . '"';
+		$result = mysql_query($query);
+		$data = array();
+		while($row = mysql_fetch_array($result)) {
+			$obj = new stdClass;
+			$obj->fileId = $row['FILE_ID'];
+			$obj->fileName = $row['FILE_NAME'];
+			$obj->filePath = $row['FILE_PATH'];
+			array_push($data, $obj);
+		}
+		echo json_encode($data);
+		$this->close();	
+	}
 }
 ?>

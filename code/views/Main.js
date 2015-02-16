@@ -1,6 +1,7 @@
 function Main(config){
 	View.call(this,config);
 	this.pathSnippet = "views/main.html";
+	this.userLogIn = false;
 }
 
 inheritPrototype(Main,View);
@@ -9,8 +10,20 @@ Main.prototype.constructor = Main;
 
 Main.prototype.initialize = function(){
 	View.prototype.initialize.call(this);
+	Utils.setMain(this);
 	this.getHeader();
 	this.showSection("home");
+	this.addListeners();
+}
+
+Main.prototype.addListeners = function() {
+	$(document).bind(Globals.GET_SECTION,{ context:this },function(e){
+		e.data.context.showSection(e.dataSection);
+	});
+
+	$(document).bind(Globals.USER_LOG_IN,{ context:this },function(e){
+		e.data.context.userLogIn = true;
+	});
 }
 
 Main.prototype.showSection = function(section) {
@@ -50,9 +63,6 @@ Main.prototype.showSection = function(section) {
 Main.prototype.getHeader = function(){
 	var header = new Header( { container : $(this.node).find("#wrapper-main-header") } );
 	header.initialize();
-	$(document).bind("GET_SECTION",{ context:this },function(e){
-		e.data.context.showSection(e.dataSection);
-	});
 }
 
 Main.prototype.getHome = function(){

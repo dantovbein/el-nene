@@ -1,8 +1,6 @@
 function InitialDownloadFile(config){
 	ViewFormFiles.call(this,config);
 	this.pathSnippet = "snippets/initial-download-file.html";
-	this.USER_REGISTERED = "userRegistered";
-	this.USER_REGISTRATION = "userRegistration";
 }
 
 inheritPrototype(InitialDownloadFile,ViewFormFiles);
@@ -22,10 +20,10 @@ InitialDownloadFile.prototype.initialize = function(){
 
 InitialDownloadFile.prototype.getRegisteredForm = function(e){
 	var self = e.data.context;
-	$(self.node).trigger( { type : self.USER_REGISTERED } );
+	$(self.node).trigger( { type : Globals.USER_REGISTERED } );
 }
 
 InitialDownloadFile.prototype.getRegistrationForm = function(e){
 	var self = e.data.context;
-	$(self.node).trigger( { type : self.USER_REGISTRATION } );
+	$(self.node).trigger( { type : Globals.USER_REGISTRATION } );
 }

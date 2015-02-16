@@ -5,91 +5,88 @@
 }
 
 .wrapper-pdf-files.pdf-1 {
-	height: 440px;
-	background: transparent url("./images/fondo-contenedor-pdf-1.png");
+	height: 430px;
+	/*background: transparent url("./images/fondo-contenedor-pdf-1.png");*/
+	background-position: -1286px -572px;
 }
 
 .wrapper-pdf-files.pdf-2 {
-	height: 775px;
-	background: transparent url("./images/fondo-contenedor-pdf-2.png");
+	height: 763px;
+	/*background: transparent url("./images/fondo-contenedor-pdf-2.png");*/
+	background-position: -1286px -1040px;
 }
 
 .icon-pdf-file {
 	cursor: pointer;
 	position: absolute;
-	width: 267px;
-	height: 294px;
+	/*width: 267px;
+	height: 294px;*/
+	width: 308px;
+	height: 300px;
+	background: transparent url("./images/svg-assets.svg");
+	-webkit-transform:scale(.9);
+	transform:scale(.9);
 	 -webkit-transition: -webkit-transform .3s;
     transition: transform .3s;
+
 }
 
 .wrapper-pdf-files .icon-pdf-file:hover {
-	-webkit-transform:scale(1.1);
-	transform:scale(1.1);
+	-webkit-transform:scale(1);
+	transform:scale(1);
 }
 
-.icon-pdf-file[data-file="1"],
-.icon-pdf-file[data-file="2"],
-.icon-pdf-file[data-file="3"],
-.icon-pdf-file[data-file="4"] {
-	width: 225px;
-}
 
 .icon-pdf-file[data-file="1"] {
-	background-position: -16px -348px;
+	background-position: -44px -406px;
 	left: 42px;
 	top: 85px;
 }
 
 .icon-pdf-file[data-file="2"] {
-	background-position: -292px -348px;
+	background-position: -372px -406px;
 	left: 320px;
 	top: 38px;
 }
 
 .icon-pdf-file[data-file="3"] {
-	background-position: -562px -348px;
+	background-position: -704px -406px;
 	right: 320px;
 	top: 104px;
 }
 
 .icon-pdf-file[data-file="4"] {
-	background-position: -834px -348px;
+	background-position: -1034px -406px;
 	right: 42px;
 	top: 72px;
 }
 
 .icon-pdf-file[data-file="5"] {
-	width: 262px;
-	background-position: -16px -34px;
+	background-position: -44px -30px;
 	left: 75px;
 	top: 100px;
 }
 
 .icon-pdf-file[data-file="6"] {
-	width: 232px;
-	background-position: -292px -34px;
+	background-position: -372px -30px;
 	left: 470px;
 	top: 62px;
 }
 
 .wrapper-pdf-files .icon-pdf-file[data-file="7"] {
-	width: 260px;
-	background-position: -562px -34px;
+	background-position: -704px -30px;
 	right: 75px;
 	top: 118px;
 }
 
 .wrapper-pdf-files .icon-pdf-file[data-file="8"] {
-	width: 242px;
-	background-position: -834px -34px;
+	background-position: -1034px -30px;
 	left: 260px;
 	top: 425px;
 }
 
 .wrapper-pdf-files .icon-pdf-file[data-file="9"] {
-	width: 278px;
-	background-position: -1108px -34px;
+	background-position: -1396px -30px;
 	right: 260px;
 	top: 432px;
 }

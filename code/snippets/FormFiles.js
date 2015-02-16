@@ -1,13 +1,10 @@
 function FormFiles(config){
 	Popup.call(this,config);
 	this.pathSnippet = "snippets/form-files.html";
-	this.INITIAL_DOWNLOAD_FILE = "initialDownloadFile";
-	this.USER_REGISTERED = "userRegistered";
-	this.USER_REGISTRATION = "userRegistration";
-	this.defaultFormView = this.INITIAL_DOWNLOAD_FILE;
+	this.defaultFormView = Globals.INITIAL_DOWNLOAD_FILE;
 
-	this.pdfFIleID = this.config.pdfFIleID;
-	this.dataSnippet = [ this.pdfFIleID ];
+	this.fileId = this.config.fileId;
+	this.dataSnippet = [ this.fileId ];
 }
 
 inheritPrototype(FormFiles,Popup);
@@ -19,7 +16,7 @@ FormFiles.prototype.initialize = function(){
 	this.getFormView(this.defaultFormView);
 	$(this.node).css({
 		left:-$(this.node).width(),
-		top:$(window).height() / 2 - $(this.node).height() / 2,
+		//top:$(window).height() / 2 - $(this.node).height() / 2,
 		opacity:0
 	});
 
@@ -41,30 +38,56 @@ FormFiles.prototype.addHandlers = function() {
 FormFiles.prototype.getFormView = function(view){
 	var container = $(this.node).find(".view-form-file");
 	$(container).empty();
+	var containerConfirmationFormButton = $(this.node).find(".wrapper-btn-confirmation-form");
 
 	var formView;
-	var dataView = { container:container };
+	var dataView = { container:container,containerConfirmationFormButton:containerConfirmationFormButton  };
+
+	if(Utils.getMain().userLogIn)
+		view = Globals.ON_CONFIRMATION_FILE;		
+
 	switch(view){
-		case this.INITIAL_DOWNLOAD_FILE:
+		case Globals.INITIAL_DOWNLOAD_FILE:
 			formView = new InitialDownloadFile(dataView);
 			break;
-		case this.USER_REGISTERED:
+		case Globals.USER_REGISTERED:
 			formView = new UserRegistered(dataView);
 			break;
-		case this.USER_REGISTRATION:
+		case Globals.USER_REGISTRATION:
 			formView = new UserRegistration(dataView);
+			break;
+		case Globals.ON_CONFIRMATION_FILE:
+			dataView.fileId = this.fileId;
+			formView = new ConfirmationFile(dataView);
+			break;
+		case Globals.ON_CONFIRMATION_USER_REGISTRATION:
+			formView = new ConfirmationUserRegistration(dataView);
 			break;
 	}
 
 	formView.initialize();
 
-	$(formView.node).bind(this.USER_REGISTERED, { context:this },function(e){
-		e.data.context.getFormView(e.data.context.USER_REGISTERED);
+	$(formView.node).bind(Globals.USER_REGISTERED, { context:this },function(e){
+		e.data.context.getFormView(Globals.USER_REGISTERED);
 	});
 
-	$(formView.node).bind(this.USER_REGISTRATION, { context:this },function(e){
-		e.data.context.getFormView(e.data.context.USER_REGISTRATION);
+	$(formView.node).bind(Globals.USER_REGISTRATION, { context:this },function(e){
+		e.data.context.getFormView(Globals.USER_REGISTRATION);
 	});
+
+	$(formView.node).bind(Globals.ON_CONFIRMATION_FILE, { context:this },function(e){
+		e.data.context.getFormView(Globals.ON_CONFIRMATION_FILE);
+	});
+
+	$(formView.node).bind(Globals.ON_CONFIRMATION_USER_REGISTRATION, { context:this },function(e){
+		e.data.context.getFormView(Globals.ON_CONFIRMATION_USER_REGISTRATION);
+	});
+
+	$(formView.node).bind(Globals.ON_CONFIRMATION_USER_REGISTERED, { context:this },function(e){
+		e.data.context.getFormView(Globals.ON_CONFIRMATION_FILE);
+	});
+
+	$(formView.node).bind(Globals.SHOW_ERROR, { context:this }, this.showError );	
 }
 
 FormFiles.prototype.onClosePopup = function() {
@@ -73,7 +96,12 @@ FormFiles.prototype.onClosePopup = function() {
 		left:$(window).width(),
 		opacity:0
 	},300,function(){
-		utils.removeOverlay();
+		Utils.removeOverlay();
 		$(this).remove();
 	});
 }
+
+FormFiles.prototype.showError = function(e) {
+	alert(e.dataError);
+}
+

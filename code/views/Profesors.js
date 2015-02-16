@@ -18,7 +18,7 @@ Profesors.prototype.addHandlers = function(){
 }
 
 Profesors.prototype.getFile = function(e){
-	utils.getOverlay();
-	var formFiles = new FormFiles({ container:$("body"),pdfFIleID:$(this).data("file") });
+	Utils.getOverlay();
+	var formFiles = new FormFiles({ container:$("body"),fileId:$(this).data("file") });
 	formFiles.initialize();
 }

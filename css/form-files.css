@@ -1,35 +1,135 @@
-.popup-form-files {
-	width: 802px;
-	height: 466px;
-	background-position: -1194px -1446px;
+.popup-form-files,
+.wrapper-popup-form-files {
+	width: 790px;
+	height: 445px;
 }
 
-.popup-form-files .wrapper-icon-file {
-	width: 290px;
+.wrapper-popup-form-files {
+	position: absolute;
+	background-position: -1306px -87px;
+}
+
+.wrapper-popup-form-files .wrapper-icon-file {
+	width: 256px;
+	padding: 0 0 0 20px;
+	height: 450px;
 	
 }
 
-.popup-form-files .view-form-file {
-	width: 500px;
+.wrapper-popup-form-files .view-form-file {
+	width: 514px;
+	height: 390px;
+	padding-top: 60px;
 }
 
 
-.popup-form-files .wrapper-icon-file,
-.popup-form-files .view-form-file {
-	height: 450px;
+.wrapper-popup-form-files .wrapper-icon-file,
+.wrapper-popup-form-files .view-form-file {	
 	position: relative;
 	float: left;	
 }
 
-.popup-form-files .wrapper-icon-file .icon-pdf-file {
+.wrapper-popup-form-files .wrapper-icon-file .icon-pdf-file {
 	left: 0;
 	right: 0;
 	top: 0;
 	bottom: 0;
 	margin: auto;
 	cursor: auto;
+	-webkit-transform: scale(.8);
+	transform: scale(.8);
 }
 
-.popup-form-files h1 {
-	
+.wrapper-popup-form-files h1 {
+	color:rgba(0,0,0,1);
+	font-family: "blurmediumregular";
+	text-shadow: 2px 2px 4px rgba(255,255,255,1),
+				-2px -2px 4px rgba(255,255,255,1),
+				2px 2px 4px rgba(255,255,255,1),
+				-2px -2px 4px rgba(255,255,255,1),
+				2px 2px 4px rgba(255,255,255,1),
+				-2px -2px 4px rgba(255,255,255,1),
+				2px 2px 4px rgba(255,255,255,1),
+				-2px -2px 4px rgba(255,255,255,1),
+				2px 2px 4px rgba(255,255,255,1),
+				-2px -2px 4px rgba(255,255,255,1),
+				2px 2px 4px rgba(255,255,255,1),
+				-2px -2px 4px rgba(255,255,255,1),
+				2px 2px 4px rgba(255,255,255,1),
+				-2px -2px 4px rgba(255,255,255,1),
+				2px 2px 4px rgba(255,255,255,1),
+				-2px -2px 4px rgba(255,255,255,1),
+				2px 2px 4px rgba(255,255,255,1),
+				-2px -2px 4px rgba(255,255,255,1),
+				2px 2px 4px rgba(255,255,255,1),
+				-2px -2px 4px rgba(255,255,255,1),
+				2px 2px 4px rgba(255,255,255,1),
+				-2px -2px 4px rgba(255,255,255,1),
+				1px -3px 1px rgba(255,255,255,1),
+				-1px 2px 10px rgba(255,255,255,1),
+				4px 4px 14px rgba(0,0,0,.5);
+	font-size: 26pt;
 }
+
+.wrapper-btn-confirmation-form,
+.btn-confirmation-form {
+	width: 310px;		
+}
+
+.wrapper-btn-confirmation-form {
+	opacity: 0;
+	top: 250px;
+	left: 210px;
+	right: 0;
+	margin: auto;
+	height: 164px;
+	position: absolute;
+}
+
+.wrapper-btn-confirmation-form .btn-confirmation-form {
+	height: 76px;
+	padding: 92px 0 0 0;
+	background-position: -2138px -91px;
+	color:rgba(0,0,0,1);
+	font-family: "blurmediumregular";
+	text-shadow: 2px 2px 4px rgba(255,255,255,1),
+				-2px -2px 4px rgba(255,255,255,1),
+				2px 2px 4px rgba(255,255,255,1),
+				-2px -2px 4px rgba(255,255,255,1),
+				2px 2px 4px rgba(255,255,255,1),
+				-2px -2px 4px rgba(255,255,255,1),
+				2px 2px 4px rgba(255,255,255,1),
+				-2px -2px 4px rgba(255,255,255,1),
+				2px 2px 4px rgba(255,255,255,1),
+				-2px -2px 4px rgba(255,255,255,1),
+				2px 2px 4px rgba(255,255,255,1),
+				-2px -2px 4px rgba(255,255,255,1),
+				2px 2px 4px rgba(255,255,255,1),
+				-2px -2px 4px rgba(255,255,255,1),
+				2px 2px 4px rgba(255,255,255,1),
+				-2px -2px 4px rgba(255,255,255,1),
+				2px 2px 4px rgba(255,255,255,1),
+				-2px -2px 4px rgba(255,255,255,1),
+				2px 2px 4px rgba(255,255,255,1),
+				-2px -2px 4px rgba(255,255,255,1),
+				2px 2px 4px rgba(255,255,255,1),
+				-2px -2px 4px rgba(255,255,255,1),
+				1px -3px 1px rgba(255,255,255,1),
+				-1px 2px 10px rgba(255,255,255,1),
+				4px 4px 14px rgba(0,0,0,.5);
+	font-size: 24pt;	
+	text-align: center;
+}
+
+.wrapper-btn-confirmation-form .btn-confirmation-form span {
+	-webkit-transform:rotate(-5deg);
+	transform:rotate(-5deg);
+	display: inline-block;
+}
+
+.btn-confirmation-form[data-action="userRegistered"],
+.btn-confirmation-form[data-action="userRegistration"] {
+	color: rgba(141,198,63,1);
+}
+
+

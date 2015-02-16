@@ -1,4 +1,11 @@
-var utils = {
+this.main;
+var Utils = {
+	setMain:function(main){
+		this.main = main;
+	},
+	getMain:function(){
+		return this.main;
+	},
 	getSection:function(id){
 		switch(id){
 			case 1:

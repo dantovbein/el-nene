@@ -24,7 +24,7 @@ Header.prototype.addHandlers = function() {
 }
 
 Header.prototype.getSection = function(e){
-	$(document).trigger( { type:"GET_SECTION",dataSection:utils.getSection($(this).data("section")) });
+	$(document).trigger( { type:Globals.GET_SECTION,dataSection:Utils.getSection($(this).data("section")) });
 }
 
 Header.prototype.animateItems = function() {

@@ -1,38 +1,40 @@
 <section class="download-file-form user-registration">
 	<h1>¡Quiero registrarme!</h1>
 	<div class="wrapper-form">
-		<form>
+		<form class="generic-form">
 			<ul class="form-list">
 				<li class="item-form-list">
-					<label>Correo Electronico:</label>
-					<input type="email" />
+					<label class="font-color-blue">Correo</br>Electronico:</label>
+					<input id="user-email" type="email" value="aa@hotmail.com.ar"/>
 				</li>
 				<li class="item-form-list">
-					<label>Nombre:</label>
-					<input type="text" />
+					<label class="font-color-green">Nombre:</label>
+					<input id="user-name" type="text" />
 				</li>
 				<li class="item-form-list">
-					<label>Apellido:</label>
-					<input type="text" />
+					<label class="font-color-green">Apellido:</label>
+					<input id="user-last-name" type="text" />
 				</li>
 				<li class="item-form-list">
-					<label>Escuela:</label>
-					<input type="text" />
+					<label class="font-color-red">Escuela:</label>
+					<input id="user-school" type="text" />
 				</li>
 				<li class="item-form-list">
-					<label>Dirección:</label>
-					<input type="text" />
+					<label class="font-color-red">Dirección:</label>
+					<input id="user-address" type="text" />
 				</li>
 				<li class="item-form-list">
-					<label>Localidad:</label>
-					<input type="text" />
+					<label class="font-color-red">Localidad:</label>
+					<input id="user-city" type="text" />
 				</li>
 				<li class="item-form-list">
-					<label>Materia:</label>
-					<input type="text" />
+					<label class="font-color-red">Materia:</label>
+					<input id="user-subject" type="text" />
 				</li>
 			</ul>			
 		</form>
-		<span class="log-error">Error</span>
+		<div class="wrapper-log-error">	
+			<span class="log-error">Error</span>
+		</div>
 	</div>
 </section>

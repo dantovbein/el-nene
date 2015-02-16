@@ -1,8 +1,7 @@
 .wrapper-lastest-releases {
 	text-align: center;
-	background-image: url("./images/fondo-papel.png");
-	background-repeat: no-repeat;
-	height: 1302px;
+	background-position: -14px -23px;
+	height: 1503px;
 	position: relative;
 }
 
@@ -14,7 +13,6 @@
 .wrapper-lastest-releases ul.list-releases li {
 	display: inline-block;
 	float: left;
-	/*padding-right: 25px;*/
 }
 
 .wrapper-lastest-releases ul.list-releases li:last-child {
@@ -32,7 +30,6 @@
 	height: 230px;
 	border:5px #fff;
 	border-radius: 30px;
-	/*background-image:url("./images/fondo-circulo-release.png");*/
 	background-repeat: repeat; 	
 	border:10px solid rgba(255,255,255,1);
 	text-align: center;
@@ -130,7 +127,7 @@
 .title-nuevos-lanzamientos {
 	width: 486px;
 	height: 138px;
-	background-position: -1840px -30px;
+	background-position: -1517px -30px;
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -156,7 +153,7 @@
 .title-mini-artistas {
 	width: 409px;
 	height: 102px;
-	background-position: -1840px -198px;
+	background-position: -1517px -198px;
 	position: absolute;
 	left:660px;
 	top:667px;
