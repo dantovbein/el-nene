@@ -9,7 +9,6 @@ if(isset($_POST['userAddress'])){ $userAddress = $_POST['userAddress']; };
 if(isset($_POST['userCity'])){ $userCity = $_POST['userCity']; };
 if(isset($_POST['userSubject'])){ $userSubject = $_POST['userSubject']; };
 
-
 $data = array(
 	"userEmail" => $userEmail,
 	"userName" => $userName,

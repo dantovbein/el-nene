@@ -17,8 +17,8 @@
 }
 
 .wrapper-popup-form-files .view-form-file {
-	width: 514px;
-	height: 390px;
+	width: 500px;
+	height: 382px;
 	padding-top: 60px;
 }
 
@@ -69,6 +69,7 @@
 				-1px 2px 10px rgba(255,255,255,1),
 				4px 4px 14px rgba(0,0,0,.5);
 	font-size: 26pt;
+	line-height: 30pt;
 }
 
 .wrapper-btn-confirmation-form,
@@ -127,9 +128,8 @@
 	display: inline-block;
 }
 
-.btn-confirmation-form[data-action="userRegistered"],
-.btn-confirmation-form[data-action="userRegistration"] {
-	color: rgba(141,198,63,1);
+.btn-confirmation-form[data-action="userRegistered"] a,
+.btn-confirmation-form[data-action="userRegistration"] a,
+.btn-confirmation-form[data-action="downloadFile"] a{
+	color: rgba(141,198,63,1) !important;
 }
-
-

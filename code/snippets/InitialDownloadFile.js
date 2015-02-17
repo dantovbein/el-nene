@@ -9,11 +9,12 @@ InitialDownloadFile.prototype.constructor = InitialDownloadFile;
 
 InitialDownloadFile.prototype.initialize = function(){
 	ViewFormFiles.prototype.initialize.call(this);
+	Utilities.setHeight($(this.node).find(".wrapper-download-file-form"));
 	this.addHandlers();
 }
 
-InitialDownloadFile.prototype.initialize = function(){
-	ViewFormFiles.prototype.initialize.call(this);
+InitialDownloadFile.prototype.addHandlers = function(){
+	ViewFormFiles.prototype.addHandlers.call(this);
 	$(this.node).find(".btn-registered").click( { context:this }, this.getRegisteredForm );
 	$(this.node).find(".btn-registration").click( { context:this }, this.getRegistrationForm );
 }

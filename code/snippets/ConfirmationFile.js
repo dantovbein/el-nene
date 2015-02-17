@@ -9,13 +9,13 @@ inheritPrototype(ConfirmationFile,ViewFormFiles);
 ConfirmationFile.prototype.constructor = ConfirmationFile;
 
 ConfirmationFile.prototype.initialize = function(){
-	ViewFormFiles.prototype.initialize.call(this);	
+	ViewFormFiles.prototype.initialize.call(this);
+	$(this.node).find(".title-form").html("Chequeando archivo...");
+	Utilities.setHeight($(this.node).find(".wrapper-download-file-form"));
 	this.getFile(this.fileId);
-	
 }
 
 ConfirmationFile.prototype.getFile = function(fileId) {
-	$(this.node).find(".form-title").html("Chequeando archivo...");
 	var emailRegistered;
 	$.ajax({
 		context : this,
@@ -28,11 +28,11 @@ ConfirmationFile.prototype.getFile = function(fileId) {
 			if(result.length==0){
 				alert(Globals.ERROR_FILE_IN_DATABASE);
 				return false;
-			}
-			
+			}			
 			var urlFile = result[0].filePath + result[0].fileName;
 			if(this.checkFile(urlFile)){
-				$(this.node).find(".form-title").html("¡Ya podés descargarlo!");
+				$(this.node).find(".title-form").html("¡Ya podés descargarlo!");
+				Utilities.setHeight($(this.node).find(".wrapper-download-file-form"));
 				this.addConfirmationFormButton({ dataAction : Globals.DOWNLOAD_FILE,textButton : "Descargar", filePath:result[0].filePath, fileName:result[0].fileName });
 				this.addHandlers();
 			}else{
@@ -66,4 +66,33 @@ ConfirmationFile.prototype.checkFile = function(urlFile) {
 ConfirmationFile.prototype.addConfirmationFormButton = function(dataConfirmationButton) {
 	ViewFormFiles.prototype.addConfirmationFormButton.call(this,dataConfirmationButton);	
 	this.buttonConfirmationForm.onDownload({ filePath:dataConfirmationButton.filePath, fileName:dataConfirmationButton.fileName });
+	$(this.buttonConfirmationForm.node).bind(Globals.ON_CONFIRM_DOWNLOAD, { context:this }, this.onConfirmDownload );
 }
+
+
+ConfirmationFile.prototype.onConfirmDownload = function(e) {
+	e.preventDefault();
+	e.data.context.addDownload();
+	
+}
+
+ConfirmationFile.prototype.addDownload = function(){
+	debugger;
+	$.ajax({
+		context : this,
+		async : false,
+		url : "service/manager/addDownload.php",
+		data : { fileId : this.fileId, userId : Utils.getMain().userData.userId },
+		type : "POST",
+		success : function(r){
+			$(this.node).trigger({ type:Globals.ON_CONFIRM_DOWNLOAD });
+		},
+		error : function(error){
+			debugger;
+		}
+	})
+}
+
+
+
+

@@ -1,28 +1,31 @@
-.download-file-form.user-initial { }
-
-.nav-form-user-initial,
-.list-form-user-initial {
+.wrapper-form {
 	display: inline-block;
+	position: relative;
+}
+
+.wrapper-form .generic-form { }
+
+.generic-form {
+	padding: 25px 0 0 0;  
+}
+
+.form-list { }
+
+.form-list .item-form-list { 
 	width: 100%;
+	margin-bottom: 3px;
 }
 
-.nav-form-user-initial {
-	padding: 0 0 0 60px;
+.form-list .item-form-list label,
+.form-list .item-form-list input {
+	float: left;
 }
 
-.nav-form-user-initial .list-form-user-initial { }
-
-.nav-form-user-initial .list-form-user-initial .item-form-user-initial {
-	width: 100%;
-	margin:0 0 80px 0;
-}
-
-.nav-form-user-initial .list-form-user-initial .item-form-user-initial:last-child{
-	margin-bottom: 0;
-	
-}
-
-.nav-form-user-initial .list-form-user-initial .item-form-user-initial .btn {
+.form-list .item-form-list label{
+	width: 200px;
+	padding:10px 10px 0 0;
+	text-align: right;
+	color:rgba(0,0,0,1);
 	font-family: "blurmediumregular";
 	text-shadow: 2px 2px 4px rgba(255,255,255,1),
 				-2px -2px 4px rgba(255,255,255,1),
@@ -49,21 +52,23 @@
 				1px -3px 1px rgba(255,255,255,1),
 				-1px 2px 10px rgba(255,255,255,1),
 				4px 4px 14px rgba(0,0,0,.5);
-	font-size: 26pt;
-}
-
-.nav-form-user-initial .list-form-user-initial .item-form-user-initial .btn span {
-	display: inline-block;	
-}
-
-.nav-form-user-initial .list-form-user-initial .item-form-user-initial .btn.btn-registered {
-	color: rgba(141,198,63,1);
+	font-size: 17pt;
 	-webkit-transform:rotate(-2deg);
 	transform:rotate(-2deg);
 }
 
-.nav-form-user-initial .list-form-user-initial .item-form-user-initial .btn-registration {
-	color: rgba(249,6,6,1);
-	-webkit-transform:rotate(0deg);
-	transform:rotate(0deg);
+.form-list .item-form-list input {
+	width: 228px;
+	padding: 0 0 0 20px;
+	height: 36px;
+	font-family: "gloria_hallelujahregular";
+	font-size: 13pt;
+	background: transparent url("./images/generic-assets.png");
+	border: none;
+	background-position: -69px -684px;
+	color: rgba(102,102,102,1);
+}
+
+.wrapper-download-file-form .form-list .item-form-list input#user-email {
+	margin-top: 17px;
 }

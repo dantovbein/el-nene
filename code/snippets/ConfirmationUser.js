@@ -13,7 +13,7 @@ ConfirmationUser.prototype.initialize = function(){
 }
 
 ConfirmationUser.prototype.initTimer = function() {
-	var delay = 1000 * (Globals.TIME_AFTER_UPLOAD_FILE / Globals.TIME_AFTER_UPLOAD_FILE);
+	var delay = 1000 * (Globals.TIME_USER_CONFIRMATION_VIEW / Globals.TIME_USER_CONFIRMATION_VIEW);
    	var timer = setTimeout(this.onCompleteTimer,delay,{context:this});
    
 }
@@ -21,7 +21,7 @@ ConfirmationUser.prototype.initTimer = function() {
 ConfirmationUser.prototype.onCompleteTimer = function(data) {
 	data.context.currentTime++;
 	data.context.showTime();
-	if(data.context.currentTime == Globals.TIME_AFTER_UPLOAD_FILE){
+	if(data.context.currentTime == Globals.TIME_USER_CONFIRMATION_VIEW){
 		$(data.context.node).trigger({ type:Globals.ON_CONFIRMATION_FILE });
 	}else {		
 		data.context.initTimer();
@@ -29,3 +29,7 @@ ConfirmationUser.prototype.onCompleteTimer = function(data) {
 }
 
 ConfirmationUser.prototype.showTime = function(){}
+
+ConfirmationUser.prototype.destroy = function() {
+	//$(this.containerConfirmationFormButton).empty();
+}

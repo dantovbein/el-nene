@@ -9,10 +9,6 @@ ConfirmationUserRegistration.prototype.constructor = ConfirmationUserRegistratio
 
 ConfirmationUserRegistration.prototype.initialize = function(){
 	ConfirmationUser.prototype.initialize.call(this);
-	$(this.node).find(".counter").html(Globals.TIME_AFTER_UPLOAD_FILE);
+	Utilities.setHeight($(this.node).find(".wrapper-download-file-form"));
 	this.initTimer();
-}
-
-ConfirmationUserRegistration.prototype.showTime = function() {
-	$(this.node).find(".counter").html(Globals.TIME_AFTER_UPLOAD_FILE - this.currentTime);
 }

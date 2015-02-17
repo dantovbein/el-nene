@@ -2,6 +2,7 @@ function Main(config){
 	View.call(this,config);
 	this.pathSnippet = "views/main.html";
 	this.userLogIn = false;
+	this.userData = {};
 }
 
 inheritPrototype(Main,View);
@@ -18,12 +19,25 @@ Main.prototype.initialize = function(){
 
 Main.prototype.addListeners = function() {
 	$(document).bind(Globals.GET_SECTION,{ context:this },function(e){
+		e.preventDefault();
 		e.data.context.showSection(e.dataSection);
 	});
 
 	$(document).bind(Globals.USER_LOG_IN,{ context:this },function(e){
+		e.preventDefault();
 		e.data.context.userLogIn = true;
 	});
+
+	$(document).bind(Globals.CLOSE_POPUP,{ context:this },function(e){
+		e.preventDefault();
+		$(".popup").animate({
+				left:$(window).width(),
+				opacity:0
+			},300,function(){
+				$(".popup").remove();
+				Utils.removeOverlay();
+			});
+		});
 }
 
 Main.prototype.showSection = function(section) {

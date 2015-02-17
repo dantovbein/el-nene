@@ -16,7 +16,7 @@ FormFiles.prototype.initialize = function(){
 	this.getFormView(this.defaultFormView);
 	$(this.node).css({
 		left:-$(this.node).width(),
-		//top:$(window).height() / 2 - $(this.node).height() / 2,
+		top:$(window).height() / 2 - $(this.node).height() / 2,
 		opacity:0
 	});
 
@@ -40,68 +40,83 @@ FormFiles.prototype.getFormView = function(view){
 	$(container).empty();
 	var containerConfirmationFormButton = $(this.node).find(".wrapper-btn-confirmation-form");
 
-	var formView;
-	var dataView = { container:container,containerConfirmationFormButton:containerConfirmationFormButton  };
+	if(this.formView != undefined)
+		this.formView.destroy();
 
-	if(Utils.getMain().userLogIn)
-		view = Globals.ON_CONFIRMATION_FILE;		
+	this.formView;
+	var dataView = { container:container,containerConfirmationFormButton:containerConfirmationFormButton  };
+	
+	if(Utils.getMain().userLogIn && view==Globals.INITIAL_DOWNLOAD_FILE)
+		view = Globals.ON_CONFIRMATION_FILE;
 
 	switch(view){
 		case Globals.INITIAL_DOWNLOAD_FILE:
-			formView = new InitialDownloadFile(dataView);
+			this.formView = new InitialDownloadFile(dataView);
 			break;
 		case Globals.USER_REGISTERED:
-			formView = new UserRegistered(dataView);
+			this.formView = new UserRegistered(dataView);
 			break;
 		case Globals.USER_REGISTRATION:
-			formView = new UserRegistration(dataView);
+			this.formView = new UserRegistration(dataView);
 			break;
 		case Globals.ON_CONFIRMATION_FILE:
 			dataView.fileId = this.fileId;
-			formView = new ConfirmationFile(dataView);
+			this.formView = new ConfirmationFile(dataView);
 			break;
 		case Globals.ON_CONFIRMATION_USER_REGISTRATION:
-			formView = new ConfirmationUserRegistration(dataView);
+			this.formView = new ConfirmationUserRegistration(dataView);
+			break;
+		case Globals.THANKS_FOR_THE_DOWNLOAD:
+			this.formView = new ThanksForTheDownload(dataView);
 			break;
 	}
 
-	formView.initialize();
+	this.formView.initialize();
 
-	$(formView.node).bind(Globals.USER_REGISTERED, { context:this },function(e){
+	$(this.formView.node).bind(Globals.USER_REGISTERED, { context:this },function(e){
+		e.preventDefault();
 		e.data.context.getFormView(Globals.USER_REGISTERED);
 	});
 
-	$(formView.node).bind(Globals.USER_REGISTRATION, { context:this },function(e){
+	$(this.formView.node).bind(Globals.USER_REGISTRATION, { context:this },function(e){
+		e.preventDefault();
 		e.data.context.getFormView(Globals.USER_REGISTRATION);
 	});
 
-	$(formView.node).bind(Globals.ON_CONFIRMATION_FILE, { context:this },function(e){
+	$(this.formView.node).bind(Globals.ON_CONFIRMATION_FILE, { context:this },function(e){
+		e.preventDefault();
 		e.data.context.getFormView(Globals.ON_CONFIRMATION_FILE);
 	});
 
-	$(formView.node).bind(Globals.ON_CONFIRMATION_USER_REGISTRATION, { context:this },function(e){
+	$(this.formView.node).bind(Globals.ON_CONFIRMATION_USER_REGISTRATION, { context:this },function(e){
+		e.preventDefault();
 		e.data.context.getFormView(Globals.ON_CONFIRMATION_USER_REGISTRATION);
 	});
 
-	$(formView.node).bind(Globals.ON_CONFIRMATION_USER_REGISTERED, { context:this },function(e){
+	$(this.formView.node).bind(Globals.ON_CONFIRMATION_USER_REGISTERED, { context:this },function(e){
+		e.preventDefault();
 		e.data.context.getFormView(Globals.ON_CONFIRMATION_FILE);
 	});
 
-	$(formView.node).bind(Globals.SHOW_ERROR, { context:this }, this.showError );	
+	$(this.formView.node).bind(Globals.ON_CONFIRM_DOWNLOAD, { context:this },function(e){
+		e.preventDefault();
+		e.data.context.getFormView(Globals.THANKS_FOR_THE_DOWNLOAD);
+	});
+
+	//$(this.formView.node).bind(Globals.SHOW_ERROR, { context:this }, this.showError );	
 }
 
 FormFiles.prototype.onClosePopup = function() {
 	Popup.prototype.onClosePopup.call(this);
-	$(this.node).animate({
-		left:$(window).width(),
-		opacity:0
-	},300,function(){
-		Utils.removeOverlay();
-		$(this).remove();
-	});
+	$(document).trigger({ type:Globals.CLOSE_POPUP })
 }
 
-FormFiles.prototype.showError = function(e) {
-	alert(e.dataError);
+//FormFiles.prototype.showError = function(e) {
+	//var formLogError = new FormLogError({ container:$(e.data.context.node).find(".wrapper-form-log-error"),dataError:e.dataError });
+	//formLogError.initialize();
+//}
+
+FormFiles.prototype.destroy = function(){
+	$(this).remove();
 }
 

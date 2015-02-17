@@ -9,6 +9,7 @@ UserRegistration.prototype.constructor = UserRegistration;
 
 UserRegistration.prototype.initialize = function(){
 	ViewFormFiles.prototype.initialize.call(this);
+	Utilities.setHeight($(this.node).find(".wrapper-download-file-form"));
 	this.addConfirmationFormButton({ dataAction : Globals.USER_REGISTRATION,textButton : "Confirmar" });
 	this.addHandlers();
 }
@@ -20,39 +21,48 @@ UserRegistration.prototype.onConfirmForm = function(e) {
 
 UserRegistration.prototype.validateForm = function() {
 	ViewFormFiles.prototype.validateForm.call(this);
-	var userEmail = $(this.node).find("input#user-email").val();
-	var userName = $(this.node).find("input#user-name").val();
-	var userLastName = $(this.node).find("input#user-last-name").val();	
-	var userSchool = $(this.node).find("input#user-school").val();
-	var userAddress = $(this.node).find("input#user-address").val();
-	var userCity = $(this.node).find("input#user-city").val();
-	var userSubject = $(this.node).find("input#user-subject").val();
+
+	var nodeEmail = $(this.node).find("input#user-email");
+	var nodeName = $(this.node).find("input#user-name");
+	var nodeLastName = $(this.node).find("input#user-last-name");	
+	var nodeSchool = $(this.node).find("input#user-school");
+	var nodeAddress = $(this.node).find("input#user-address");
+	var nodeCity = $(this.node).find("input#user-city");
+	var nodeSubject = $(this.node).find("input#user-subject");
+
+	var userEmail = nodeEmail.val();
+	var userName = nodeName.val();
+	var userLastName = nodeLastName.val();	
+	var userSchool = nodeSchool.val();
+	var userAddress = nodeAddress.val();
+	var userCity = nodeCity.val();
+	var userSubject = nodeSubject.val();
 	
-	if(!utilities.validateEmail(userEmail)){
-		this.showError(Globals.MESSAGE_FORM_INVALID_EMAIL);
+	if(!Utilities.validateEmail(userEmail)){
+		this.showError({ error:Globals.MESSAGE_FORM_INVALID_EMAIL, node:nodeEmail });
 		return false;
 	} else if(this.checkEmailRegistered(userEmail)) {
-		this.showError(Globals.MESSAGE_FORM_NOT_AVAILABLE_EMAIL);
+		this.showError({ error:Globals.MESSAGE_FORM_NOT_AVAILABLE_EMAIL, node:nodeEmail });
 		return false;
-	} /*else if(userName == ""){
-		this.showError(Globals.MESSAGE_FORM_INVALID_NAME);
+	} else if(userName == ""){
+		this.showError({ error:Globals.MESSAGE_FORM_INVALID_NAME, node:nodeName });
 		return false;
 	} else if(userLastName == ""){
-		this.showError(Globals.MESSAGE_FORM_INVALID_LAST_NAME);
+		this.showError({ error:Globals.MESSAGE_FORM_INVALID_LAST_NAME, node:nodeLastName });
 		return false;
 	} else if(userSchool == ""){
-		this.showError(Globals.MESSAGE_FORM_INVALID_SCHOOL);
+		this.showError({ error:Globals.MESSAGE_FORM_INVALID_SCHOOL, node:nodeSchool });
 		return false;
 	} else if(userAddress == ""){
-		this.showError(Globals.MESSAGE_FORM_INVALID_ADDRESS);
+		this.showError({ error:Globals.MESSAGE_FORM_INVALID_ADDRESS, node:nodeAddress });
 		return false;
 	} else if(userCity == ""){
-		this.showError(Globals.MESSAGE_FORM_INVALID_CITY);
+		this.showError({ error:Globals.MESSAGE_FORM_INVALID_CITY, node:nodeCity });
 		return false;
 	} else if(userSubject == ""){
-		this.showError(Globals.MESSAGE_FORM_INVALID_SUBJECT);
+		this.showError({ error:Globals.MESSAGE_FORM_INVALID_SUBJECT, node:nodeSubject });
 		return false;
-	}*/ else {
+	} else {
 		this.addUser({	userEmail : userEmail,
 						userName : userName,
 						userLastName : userLastName,
@@ -71,12 +81,14 @@ UserRegistration.prototype.addUser = function(userData) {
 		data : userData,
 		url : "service/manager/addUser.php",
 		context:this,
-		success : function(result) {
-			if(result==1){
-				this.destroy();
-				$(this.node).trigger({ type:Globals.ON_CONFIRMATION_USER_REGISTRATION });
-				$(document).trigger({ type:Globals.USER_LOG_IN });
-			}
+		success : function(r) {
+			var result = JSON.parse(r); 
+			Utils.getMain().userData = result[0];
+
+			this.destroy();
+			
+			$(this.node).trigger({ type:Globals.ON_CONFIRMATION_USER_REGISTRATION });
+			$(document).trigger({ type:Globals.USER_LOG_IN });
 		},
 		error : function(error) {
 			debugger;

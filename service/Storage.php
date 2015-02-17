@@ -28,6 +28,19 @@ class Storage {
 		$this->connect();
 		$query = 'INSERT INTO USERS (USER_EMAIL,USER_NAME,USER_LAST_NAME,USER_SCHOOL,USER_ADDRESS,USER_CITY,USER_SUBJECT) VALUES ("' . $data['userEmail'] . '","' . $data['userName'] . '","' . $data['userLastName'] . '","' . $data['userSchool'] . '","' . $data['userAddress'] . '","' . $data['userCity'] . '","' . $data['userSubject'] . '")';
 		$result = mysql_query($query);
+		
+		$data = array();
+		$obj = new stdClass;
+		$obj->userId = mysql_insert_id();
+		array_push($data, $obj);
+		echo json_encode($data);
+		$this->close();	
+	}
+
+	public function addDownload($data) {
+		$this->connect();
+		$query = 'INSERT INTO DOWNLOADS (USER_ID,FILE_ID) VALUES ("' . $data['userId'] . '","' . $data['fileId'] . '")';
+		$result = mysql_query($query);
 		echo $result;
 		$this->close();	
 	}
@@ -39,6 +52,7 @@ class Storage {
 		$data = array();
 		while($row = mysql_fetch_array($result)) {
 			$obj = new stdClass;
+			$obj->userId = $row['USER_ID'];
 			$obj->userEmail = $row['USER_EMAIL'];
 			array_push($data, $obj);
 		}

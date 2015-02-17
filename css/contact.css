@@ -1,28 +1,57 @@
-.download-file-form.user-initial { }
+.view.contact-view {
+	height: 700px;
+	position: relative;
+}
 
-.nav-form-user-initial,
-.list-form-user-initial {
-	display: inline-block;
+.contact-form { 
+	position: relative;
+	height: 570px;
+	padding-top: 50px;
+	overflow: hidden;
+}
+
+.contact-form .wrapper-contact-form {
+	width: 800px;
+	height: 570px;
+	background-position: -54px -1842px;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	position: absolute;
+}
+
+.contact-form .wrapper-contact-form .wrapper-form{
+	position: absolute;
+	top: 163px;
+	margin: auto;
+	left: 0;
+	right: 0;
+	width: 650px;
+}
+
+.form-shadow {
+	height: 10px;
 	width: 100%;
+	background-position: -920px -1918px;
+	top: 665px;
+	position: absolute;
 }
 
-.nav-form-user-initial {
-	padding: 0 0 0 60px;
+.title-contacto {
+	width: 225px;
+	height: 75px;
+	background-position: -20px -476px;
+	position: absolute;
+	left: 23px;
+	right: 0;
+	top: 31px;
+	margin: auto;
 }
 
-.nav-form-user-initial .list-form-user-initial { }
-
-.nav-form-user-initial .list-form-user-initial .item-form-user-initial {
-	width: 100%;
-	margin:0 0 80px 0;
-}
-
-.nav-form-user-initial .list-form-user-initial .item-form-user-initial:last-child{
-	margin-bottom: 0;
-	
-}
-
-.nav-form-user-initial .list-form-user-initial .item-form-user-initial .btn {
+.contact-form .btn-send {
+	height: 76px;
 	font-family: "blurmediumregular";
 	text-shadow: 2px 2px 4px rgba(255,255,255,1),
 				-2px -2px 4px rgba(255,255,255,1),
@@ -49,21 +78,10 @@
 				1px -3px 1px rgba(255,255,255,1),
 				-1px 2px 10px rgba(255,255,255,1),
 				4px 4px 14px rgba(0,0,0,.5);
-	font-size: 26pt;
-}
-
-.nav-form-user-initial .list-form-user-initial .item-form-user-initial .btn span {
-	display: inline-block;	
-}
-
-.nav-form-user-initial .list-form-user-initial .item-form-user-initial .btn.btn-registered {
-	color: rgba(141,198,63,1);
-	-webkit-transform:rotate(-2deg);
-	transform:rotate(-2deg);
-}
-
-.nav-form-user-initial .list-form-user-initial .item-form-user-initial .btn-registration {
-	color: rgba(249,6,6,1);
-	-webkit-transform:rotate(0deg);
-	transform:rotate(0deg);
+	font-size: 24pt;
+	top: 560px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	position: absolute;
 }
