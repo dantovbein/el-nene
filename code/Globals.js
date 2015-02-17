@@ -26,6 +26,7 @@ const Globals = {
 	MESSAGE_FILE_IN_DATABASE : "No existe el archivo cargado en la Base de datos",
 	MESSAGE_NOT_EXIST : "Archivo inexistente",
 	MESSAGE_FILE_EXIST : "Existe el archivo",
+	MESSAGE_COMMENT_EMPTY : "Comentario vacio",
 	TIME_USER_CONFIRMATION_VIEW : 2,
 	TIME_THANKS_FOR_THE_DOWNLOAD : 2,
 	TIME_TO_SHOW_FORM_ERROR : 2
