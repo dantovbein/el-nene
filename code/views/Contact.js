@@ -24,7 +24,7 @@ Contact.prototype.validateForm = function() {
 	var nodeName = $(this.node).find("input#user-name");
 	var nodeLastName = $(this.node).find("input#user-last-name");
 	var nodeEmail = $(this.node).find("input#user-email");
-	var nodeComment = $(this.node).find("input#user-comment");
+	var nodeComment = $(this.node).find("#user-comment");
 
 	var userEmail = nodeEmail.val();
 	var userName = nodeName.val();
@@ -62,17 +62,59 @@ Contact.prototype.showError = function(d){
 }
 
 Contact.prototype.sendEmail = function(d) {
+	$(this.node).find(".btn-send").animate({
+		opacity:0
+	},300,function(){
+		$(this).css({ display:"none" });
+	});
+
 	$.ajax({
 		context : this,
 		async : false,
-		//url : "service/sendEmail.php",
-		url : "http://www.blockelnene.com.ar/blockelnenecomar/new/service/sendEmail.php",
+		type : "POST",
+		url : "service/sendEmail.php",
 		data : d,
 		success : function(r) {
-			debugger;
+			this.onSendSuccesful();
 		},
 		error : function(error) {
 			debugger;
 		}
 	});
 }
+
+Contact.prototype.onSendSuccesful = function(){
+	this.resetForm();
+	
+	$(this.node).find(".thanks-message").css({
+		display:"block"
+	});
+	$(this.node).find(".thanks-message").animate({
+		opacity:1
+	},250,function(){
+		$(this).delay(2500).animate({
+			opacity:0
+		},250,function(){
+			$(this).css({
+				display : "none"
+			})
+		});
+	});
+
+	$(this.node).find(".wrapper-contact-form").animate({
+		top:1200
+	},600,function(){
+		$(this).delay(3000).animate({
+			top:0
+		},300);
+	});
+}
+
+Contact.prototype.resetForm = function() {
+	$(this.node).find("input#user-name").val("");
+	$(this.node).find("input#user-last-name").val("");
+	$(this.node).find("input#user-email").val("");
+	$(this.node).find("#user-comment").val("");
+}
+
+

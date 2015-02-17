@@ -18,6 +18,7 @@ Libs.prototype.getFiles = function(_lib_) {
 			"name"	: "web",
 			"libs"	: [
 				"code/monkeyman/css/utils.css",
+				"css/base.css",
 				"css/gloria-hallelujah.css",
 				"css/blurmediumregular.css",
 				"css/download-file-form.css",

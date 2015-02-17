@@ -9,7 +9,9 @@
 	padding: 25px 0 0 0;  
 }
 
-.form-list { }
+.form-list {
+	display: inline-block;
+}
 
 .form-list .item-form-list { 
 	width: 100%;
@@ -17,7 +19,8 @@
 }
 
 .form-list .item-form-list label,
-.form-list .item-form-list input {
+.form-list .item-form-list input,
+.form-list .item-form-list textarea {
 	float: left;
 }
 
@@ -57,16 +60,25 @@
 	transform:rotate(-2deg);
 }
 
-.form-list .item-form-list input {
+.form-list .item-form-list input,
+.form-list .item-form-list textarea {
 	width: 228px;
 	padding: 0 0 0 20px;
-	height: 36px;
+	
 	font-family: "gloria_hallelujahregular";
 	font-size: 13pt;
 	background: transparent url("./images/generic-assets.png");
 	border: none;
 	background-position: -69px -684px;
 	color: rgba(102,102,102,1);
+}
+
+.form-list .item-form-list input {
+	height: 36px;
+}
+
+.form-list .item-form-list textarea {
+	height: 200px;
 }
 
 .wrapper-download-file-form .form-list .item-form-list input#user-email {

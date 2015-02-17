@@ -6,24 +6,21 @@
 
 .wrapper-pdf-files.pdf-1 {
 	height: 430px;
-	/*background: transparent url("./images/fondo-contenedor-pdf-1.png");*/
 	background-position: -1286px -572px;
 }
 
 .wrapper-pdf-files.pdf-2 {
 	height: 763px;
-	/*background: transparent url("./images/fondo-contenedor-pdf-2.png");*/
 	background-position: -1286px -1040px;
 }
 
 .icon-pdf-file {
 	cursor: pointer;
 	position: absolute;
-	/*width: 267px;
-	height: 294px;*/
 	width: 308px;
 	height: 300px;
-	background: transparent url("./images/svg-assets.svg");
+	/*background: transparent url("images/svg-assets.svg");*/
+	background: transparent url("images/pdf-file-icons.png");
 	-webkit-transform:scale(.9);
 	transform:scale(.9);
 	 -webkit-transition: -webkit-transform .3s;
