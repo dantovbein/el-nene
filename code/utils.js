@@ -35,8 +35,8 @@ var Utils = {
 		var overlay = document.createElement("div");
 		overlay.setAttribute("id", "overlay");
     	document.body.appendChild(overlay);
-		overlay.style.width = window.innerWidth + "px";
-		overlay.style.height = window.innerHeight + "px";
+    	overlay.style.width = document.body.scrollWidth + "px";
+		overlay.style.height = document.body.scrollHeight + "px";
 	},
 	removeOverlay:function(){
 		var overlay = document.getElementById("overlay");
