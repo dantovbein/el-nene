@@ -12,7 +12,10 @@ Header.prototype.initialize = function(){
 	this.container.append(this.node);
 
 	$.each($(this.node).find(".item-main-nav"),function(){
-		$(this).css( { "top" : -($(this).height()) - 150 } );
+		$(this).css({ 
+			top : -($(this).height()) - 150,
+			width : ( $(this).find(".section-name") ) ? $(this).find(".section-name").width() : "auto"
+		});
 	});
 
 	this.animateItems();
@@ -30,7 +33,7 @@ Header.prototype.getSection = function(e){
 Header.prototype.animateItems = function() {
 	var speed = 600;
 	var delay = 100;
-	var top = -80;
+	var top = 45;
 	$(this.node).find(".item-main-nav.main-logo").delay(delay).animate( { 
 		top:top
 	},{
@@ -39,28 +42,28 @@ Header.prototype.animateItems = function() {
 	});
 
 	$(this.node).find(".item-main-nav.btn-inicio").delay(delay * 3).animate( { 
-		top:top
+		top:top + 80
 	},{
 		duration: speed,
   		easing: "swing"
 	});
 
 	$(this.node).find(".item-main-nav.btn-productos").delay(delay * 4).animate( { 
-		top:top
+		top:top + 40
 	},{
 		duration: speed,
   		easing: "swing"
 	});
 
 	$(this.node).find(".item-main-nav.btn-docentes").delay(delay * 2).animate( { 
-		top:top
+		top:top + 40
 	},{
 		duration: speed,
   		easing: "swing"
 	});
 
 	$(this.node).find(".item-main-nav.btn-contacto").delay(delay * 5).animate( { 
-		top:top
+		top:top + 80
 	},{
 		duration: speed,
   		easing: "swing"

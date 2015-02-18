@@ -36,6 +36,7 @@ Libs.prototype.getFiles = function(_lib_) {
 				"css/confirmation-user-registration.css",
 				"css/form-log-error.css",
 				"css/product-info.css",
+				"css/products.css",
 				"code/monkeyman/core/oop.js",
 				"code/monkeyman/core/Snippet.js",
 				"code/monkeyman/core/Utilities.js",

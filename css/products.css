@@ -1,8 +1,123 @@
 .wrapper-products {
 	width: 100%;
 	display: inline-block;
+	position: relative;
 }
 
 .wrapper-products.products-mini-artista {
-	background-position: -100px -10px;
+	background-position: -27px -2688px;
+	height: 644px;
+}
+
+.wrapper-products.products-blocks {
+	background-position: -1281px -1907px;
+	height: 708px;
+}
+
+.wrapper-products.products-repuestos {
+	background-position: -1284px -2688px;
+	height: 644px;
+}
+
+.wrapper-products .item-product-block-negro {
+	left: 0;
+	right: 0;
+	top: 290px;
+	margin: auto;
+}
+
+.wrapper-products .item-product-papel-madera {
+	right: 250px;
+	top:400px;
+}
+
+.wrapper-products .item-product-cartulina-fantasia {
+	right: 75px;
+	top:257px;
+}
+
+.wrapper-products .item-product-block-blanco {
+	width: 260px;
+	height: 216px;
+	top: 433px;
+	left: 305px;
+	background-position: -1426px -515px;
+}
+
+.wrapper-products .item-product-block-color {
+	width: 350px;
+	height: 240px;
+	top: 252px;
+	left: 75px;
+	background-position: -1423px -254px;
+}
+
+.title-wrapper-products {
+	position: absolute;
+	top: 58px;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+.title-products-mini-artista {
+	width: 402px;
+	height: 95px;
+	background-position: -17px -196px;
+}
+
+.title-product-blocks {
+	width: 183px;
+	height: 80px;
+	top: 110px;
+	background-position: -310px -332px;
+}
+
+.title-product-repuestos {
+	width: 271px;
+	height: 132px;
+	top: 76px;
+	background-position: -263px -443px;
+}
+
+.item-product-taller-de-origami {
+	width: 282px;
+	height: 280px;
+	background-position: -548px -1135px;
+	top: 222px;
+	left: 72px;
+}
+
+.item-product-taller-de-titeres {
+	width: 282px;
+	height: 314px;
+	background-position: -859px -1135px;
+	top: 236px;
+	left: 361px;
+}
+
+.item-product-taller-de-pintura {
+	width: 323px;
+	height: 280px;
+	background-position: -1166px -1135px;
+	top: 214px;
+	right: 254px;
+}
+
+.item-product-taller-de-figuras {
+	width: 179px;
+	height: 229px;
+	background-position: -1513px -1135px;
+	top: 235px;
+	right: 72px;
+}
+
+.item-product-repuestos {
+	width: 810px;
+	height: 214px;
+	left: 0;
+	right: 0;
+	top: 314px;
+	margin: auto;
+	background-position: -960px -1492px;
 }

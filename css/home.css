@@ -183,40 +183,53 @@
 	position: absolute;
 }
 
-.item-product.item-product-block-negro {
-	width: 276px;
-	height: 278px;
-	background-position: -532px -31px;
+.wrapper-lastest-releases .item-product-block-negro{
 	top: 962px;
 	left: 142px;
 }
 
-.item-product.item-product-papel-madera {
-	width: 260px;
-	height: 295px;
-	background-position: -828px -31px;
+.item-product.item-product-block-negro {
+	width: 276px;
+	height: 278px;
+	background-position: -532px -31px;
+	
+}
+
+.wrapper-lastest-releases .item-product-papel-madera {
 	top: 989px;
 	left: 0;
 	right: 0;
 	margin: auto;
 }
 
-.item-product.item-product-cartulina-fantasia {
-	width: 262px;
-	height: 285px;
-	background-position: -1127px -31px;
+.item-product.item-product-papel-madera {
+	width: 260px;
+	height: 295px;
+	background-position: -828px -31px;	
+}
+
+.wrapper-lastest-releases .item-product-cartulina-fantasia {
 	top: 962px;
 	right: 142px;
 }
 
-.item-product.item-product-block-color {
-	width: 200px;
-	height: 213px;
-	background-position: -1419px -26px;
+.item-product.item-product-cartulina-fantasia {
+	width: 262px;
+	height: 285px;
+	background-position: -1127px -31px;	
+}
+
+.wrapper-lastest-releases .item-product-block-color {
 	top: 1348px;
 	left: 0;
 	right: 0;
 	margin: auto;
+}
+.item-product.item-product-block-color {
+	width: 200px;
+	height: 213px;
+	background-position: -1419px -26px;
+	
 }
 
 .title-nuevos-lanzamientos {
