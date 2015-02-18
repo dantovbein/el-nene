@@ -1,19 +1,19 @@
 <?php
 class Storage {
 	
-	/*
+	///*
 	public $host = "localhost";
 	public $server = "root";
 	public $password = "";
 	public $dataBase = "elnene";
-	*/
+	//*/
 
-	//
+	/*//
 	public $host = "elnene.db.10915528.hostedresource.com";
 	public $server = "elnene";
 	public $password = "Estrada2014Aesa@";
 	public $dataBase = "elnene";
-	//
+	*///
 	
 	private $sql;
 
