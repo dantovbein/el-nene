@@ -1,20 +1,30 @@
 function Main(config){
-	View.call(this,config);
+	this.config = config;
+	this.container = this.config.container;
+	this.initializeParameters();
+	this.initialize();
+}
+
+//inheritPrototype(Main,View);
+
+Main.prototype.constructor = Main;
+
+Main.prototype.initializeParameters = function() {
 	this.pathSnippet = "views/main.html";
 	this.userLogIn = false;
 	this.userData = {};
 }
 
-inheritPrototype(Main,View);
-
-Main.prototype.constructor = Main;
-
 Main.prototype.initialize = function(){
-	View.prototype.initialize.call(this);
+	var snippet = new Snippet( { path : this.pathSnippet , data : (this.data != undefined) ? this.data : [] } );
+	this.node = $.parseHTML(snippet.getSnippet());
+	this.container.append(this.node);
+
 	Utils.setMain(this);
 	this.getHeader();
 	this.showSection("home");
 	this.addListeners();
+	Utils.removePreloader();
 }
 
 Main.prototype.addListeners = function() {

@@ -36,7 +36,7 @@
 	top: 184px;
 	left: 5px;
 	box-shadow: 3px 3px 25px rgba(0,0,0,0.3);
-	background: url("images/background-popup.png");
+	background: url("./images/background-popup.png");
 	background-blend-mode: multiply;
 	background-repeat: repeat;
 }

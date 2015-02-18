@@ -3,18 +3,24 @@
 <head>
 	<title>El Nene</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<!--<link href="css/base.css" rel="stylesheet" type="text/css"/>-->
+	<link href="css/base.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript" src="code/monkeyman/3rdparty/jquery/src/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" src="code/Libs.js"></script>
+	<script type="text/javascript" src="code/Utils.js"></script>
 	<script type="text/javascript">
 		$(window).load(function(){
-			var libs = new Libs("web");
-			var main = new Main( { container : $("body") } );
-			main.initialize();
+			var libs = new Libs("web",onSuccessLibs);
+			function onSuccessLibs(){
+				var main = new Main( { container : $("body") } );
+			}
 		});
 	</script>
 </head>
 <body>
 	
 </body>
+<script type="text/javascript">
+	Utils.getPreloader();
+</script>
+
 </html>

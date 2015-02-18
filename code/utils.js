@@ -23,7 +23,7 @@ var Utils = {
 		}
 	},
 	getOverlay:function(){
-		$("body").append('<div class="overlay"></div>');
+		/*$("body").append('<div class="overlay"></div>');
 		$(".overlay").css({
 			opacity:0,
 			width : $(document).width(),
@@ -31,14 +31,44 @@ var Utils = {
 		});
 		$(".overlay").animate({
 			opacity:1
-		},300)
+		},300);*/
+		var overlay = document.createElement("div");
+		overlay.setAttribute("id", "overlay");
+    	document.body.appendChild(overlay);
+		overlay.style.width = window.innerWidth + "px";
+		overlay.style.height = window.innerHeight + "px";
 	},
 	removeOverlay:function(){
-		$(".overlay").animate({
+		var overlay = document.getElementById("overlay");
+		overlay.remove();
+		/*$(".overlay").animate({
 			opacity:0
 		},300,function(){
 			$(this).remove();
-		})
+		}))*/
+	},
+	getPreloader : function(value){
+		this.getOverlay();
+		
+		var preloader = document.createElement("div");
+		preloader.setAttribute("id", "preloader");
+
+		var preloaderIcon = document.createElement("div");
+		preloaderIcon.className = "preloader-icon";
+		preloader.appendChild(preloaderIcon);
+
+		var preloaderText = document.createElement("span");
+		preloaderText.className = "preloader-text";
+		preloaderText.innerHTML = (value != undefined) ? value : "Cargando";
+		preloader.appendChild(preloaderText);
+		
+		document.body.appendChild(preloader);
+		preloader.style.top = (window.innerHeight / 2 - preloader.offsetHeight / 2) + "px";
+	},
+	removePreloader : function(){
+		this.removeOverlay();
+		var preloader = document.getElementById("preloader");
+		preloader.remove();
 	},
 	getDataProduct : function(productId){
 		this.dataProduct = {};
