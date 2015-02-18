@@ -79,5 +79,22 @@ class Storage {
 		echo json_encode($data);
 		$this->close();	
 	}
+
+	public function getProduct($data){
+		$this->connect();
+		mysql_set_charset('utf8');
+		$query = 'SELECT * FROM PRODUCTS WHERE PRODUCT_ID="' . $data['productId'] . '"';
+		$result = mysql_query($query);
+		$data = array();
+		while($row = mysql_fetch_array($result)) {
+			$obj = new stdClass;
+			$obj->productId = $row['PRODUCT_ID'];
+			$obj->productName = $row['PRODUCT_NAME'];
+			$obj->productDetails = $row['PRODUCT_DETAILS'];
+			array_push($data, $obj);
+		}
+		echo json_encode($data);
+		$this->close();	
+	}
 }
 ?>

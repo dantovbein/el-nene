@@ -1,3 +1,7 @@
+.view {
+	opacity: 1;
+}
+
 .view .title-view {
 	margin-bottom: 70px;
 }

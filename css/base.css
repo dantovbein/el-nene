@@ -28,10 +28,6 @@ a {
 	float: left;
 }
 
-.view {
-	opacity: 1;
-}
-
 .generic-assets {
 	background: url("images/generic-assets.png");
 	background-repeat:no-repeat; 
@@ -41,14 +37,13 @@ a {
 	background: url("images/background-assets.png");
 	background-repeat:no-repeat;
 }
-
-/*.svg-assets {
-	background: url("../images/svg-assets.svg");
-}*/
-
 .btn {
 	cursor: pointer;
 	display: inline-block;
+}
+
+.popup {
+	z-index: 99999;
 }
 
 .popup .btn-close {
@@ -61,6 +56,10 @@ a {
 	z-index: 9999;
 }
 
+.product {
+	cursor: pointer;
+}
+
 /* start generic */
 .overlay {
 	top: 0;
@@ -68,6 +67,7 @@ a {
 	display: inline-block;
 	background-color: rgba(0,0,0,.4);
 	position: absolute;
+	z-index: 9999;
 }
 
 .generic-title {

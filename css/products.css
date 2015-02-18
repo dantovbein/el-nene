@@ -1,0 +1,8 @@
+.wrapper-products {
+	width: 100%;
+	display: inline-block;
+}
+
+.wrapper-products.products-mini-artista {
+	background-position: -100px -10px;
+}

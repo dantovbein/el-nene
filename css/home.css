@@ -26,18 +26,19 @@
 }
 
 .wrapper-release-description {
-	width: 230px;
+	width: 240px;
 	height: 230px;
-	border:5px #fff;
+	padding: 18px 10px;
 	border-radius: 30px;
-	background-repeat: repeat; 	
-	border:10px solid rgba(255,255,255,1);
+	border: 7px solid rgba(255,255,255,1);
 	text-align: center;
-	padding: 20px;
 	position: absolute;
 	top: 184px;
 	left: 5px;
-	box-shadow:3px 3px 25px rgba(0,0,0,0.3);
+	box-shadow: 3px 3px 25px rgba(0,0,0,0.3);
+	background: url("images/background-popup.png");
+	background-blend-mode: multiply;
+	background-repeat: repeat;
 }
 
 
@@ -56,78 +57,172 @@
 
 
 .wrapper-release-description h1 {
-	font-size: 11pt;
-	word-break: break-word;
-	line-height: 13pt;
+	font-size: 14pt;
+	font-family: "blurmediumregular";
+	text-transform: uppercase;
 }
 
 .wrapper-release-description p {
-	font-size: 9pt;
-	line-height: 14pt;
-	word-break: break-word;
+	font-size: 10pt;
+	line-height: 12pt;
+}
+
+.wrapper-release-description h1,
+.wrapper-release-description p {
+	text-shadow:3px 3px 8px rgba(0,0,0,.5);
+}
+
+.wrapper-release-description .item-new-release .product-origami p {
+	line-height: 12pt;
 }
 
 .wrapper-accesories {
 	position: relative;
 }
 
-.wrapper-accesories .accesory {
+.item-new-release .accesory {
 	position: absolute;
-	top: 0;
 	left: 0;
+	right: 0;
+	margin: auto;
 }
 
-.product-origami .accesory.p1,
-.product-titeres .accesory.p1,
-.product-pintura .accesory.p1 {
+.accesory.box {
+	width: 186px;
+	height: 232px;
 	top:0;
-	left: 0;
+	left: -84px;
 }
 
-.product-figuras .accesory.p1 {
-	top: 0;
-	left: 42px;
-}
-
-.product-origami .accesory.p2,
-.product-titeres .accesory.p2,
-.product-pintura .accesory.p2,
-.product-figuras .accesory.p2 {
+.accesory.book {
+	width: 158px;
+	height: 144px;
 	top:80px;
 	left: 135px;
 }
 
-.product-origami .accesory.p3,
-.product-titeres .accesory.p3,
-.product-pintura .accesory.p3,
-.product-pintura .accesory.p4 {
+.accesory.accesory-product-origami.box {
+	background-position: -543px -355px;
+}
+
+.accesory.accesory-product-titeres.box {
+	background-position: -749px -355px;
+}
+
+.accesory.accesory-product-pintura.box {
+	background-position: -953px -355px;
+}
+
+.accesory.accesory-product-figuras.box {
+	background-position: -1161px -355px;
+}
+
+
+.accesory.accesory-product-origami.book {
+	background-position: -532px -656px;
+}
+.accesory.accesory-product-titeres.book {
+	background-position: -861px -656px;
+}
+.accesory.accesory-product-pintura.book {
+	background-position: -698px -656px;
+}
+.accesory.accesory-product-figuras.book {
+	background-position: -532px -656px;
+}
+
+
+.accesory.extra {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
 	z-index: 999;
 }
 
-.product-origami .accesory.p3 {
-	top:424px;
-	left: 128px;
+.accesory.accesory-product-origami.extra-1 {
+	width: 164px;
+	height: 98px;
+	background-position: -1196px -839px;
+	bottom: -77px;
 }
 
-.product-titeres .accesory.p3 {
-	top:413px;
-	left: 58px;
+.accesory.accesory-product-titeres.extra-1 {
+	width: 117px;
+	height: 95px;
+	background-position: -855px -839px;
+	bottom: -51px;
+	right: -85px;
 }
 
-.product-pintura .accesory.p3 {
-	top:359px;
-	left: -10px;
+.accesory.accesory-product-titeres.extra-2 {
+	width: 134px;
+	height: 157px;
+	background-position: -547px -849px;
+	bottom: -94px;
+	left: -85px;
 }
 
-.product-pintura .accesory.p4 {
-	top:421px;
-	left: 148px;
+.accesory.accesory-product-pintura.extra-1 {
+	width: 163px;
+	height: 160px;
+	background-position: -1002px -839px;
+	bottom: -48px;
+	left: -134px;
+}
+
+.accesory.accesory-product-pintura.extra-2 {
+	width: 91px;
+	height: 69px;
+	background-position: -722px -839px;
+	bottom: -34px;
+	right: -119px;
+}
+
+.item-product {
+	position: absolute;
+}
+
+.item-product.item-product-block-negro {
+	width: 276px;
+	height: 278px;
+	background-position: -532px -31px;
+	top: 962px;
+	left: 142px;
+}
+
+.item-product.item-product-papel-madera {
+	width: 260px;
+	height: 295px;
+	background-position: -828px -31px;
+	top: 989px;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+.item-product.item-product-cartulina-fantasia {
+	width: 262px;
+	height: 285px;
+	background-position: -1127px -31px;
+	top: 962px;
+	right: 142px;
+}
+
+.item-product.item-product-block-color {
+	width: 200px;
+	height: 213px;
+	background-position: -1419px -26px;
+	top: 1348px;
+	left: 0;
+	right: 0;
+	margin: auto;
 }
 
 .title-nuevos-lanzamientos {
 	width: 486px;
 	height: 138px;
-	background-position: -1517px -30px;
+	background-position: -11px -30px;
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -153,7 +248,7 @@
 .title-mini-artistas {
 	width: 409px;
 	height: 102px;
-	background-position: -1517px -198px;
+	background-position: -13px -198px;
 	position: absolute;
 	left:660px;
 	top:667px;
@@ -164,10 +259,12 @@
 .title-se-agrando-la-familia {
 	width: 257px;
 	height: 133px;
-	background-position: -1843px -328px;
+	background-position: -12px -328px;
 	position: absolute;
-	left:45px;
-	top:1120px;
+	left: -45px;
+	top: 836px;
+	right: 0;
+	margin: auto;
 	/*-webkit-animation: pulmon 2s linear 2s infinite alternate;
     animation: pulmon 2s linear 2s infinite alternate;*/
 }
