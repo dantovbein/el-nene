@@ -1,7 +1,8 @@
 function ProductInfo(config){
 	Popup.call(this,config);
 	this.pathSnippet = "snippets/product-info.html";
-	this.dataSnippet = [ this.config.dataProduct.productName,this.config.dataProduct.productDetails ]; 
+	this.dataSnippet = [ this.config.dataProduct.productName,this.config.dataProduct.productDetails ];
+	this.productId = this.config.dataProduct.productId;
 }
 
 inheritPrototype(ProductInfo,Popup);
@@ -11,7 +12,12 @@ ProductInfo.prototype.constructor = ProductInfo;
 ProductInfo.prototype.initialize = function(){
 	Popup.prototype.initialize.call(this);
 
-	var color = Utils.getProductColor(this.config.dataProduct.productId);
+	if(this.productId ==7 || this.productId == 10){
+		var colorsPalette = new ColorsPalette({ container:$(this.node).find(".wrapper-extras") });
+		colorsPalette.initialize();
+	}
+
+	var color = Utils.getProductColor(this.productId);
 
 	$(this.node).find(".title-product-info").css({
 		top : -$(this.node).find(".title-product-info").height() - 15,

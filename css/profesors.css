@@ -6,7 +6,7 @@
 
 .wrapper-pdf-files.pdf-1 {
 	height: 430px;
-	background-position: -1286px -572px;
+	background-position: -1298px -572px;
 }
 
 .wrapper-pdf-files.pdf-2 {
@@ -36,54 +36,54 @@
 
 .icon-pdf-file[data-file="1"] {
 	background-position: -44px -406px;
-	left: 42px;
-	top: 85px;
+	left: 10px;
+	top: 67px;
 }
 
 .icon-pdf-file[data-file="2"] {
 	background-position: -372px -406px;
-	left: 320px;
-	top: 38px;
+	left: 281px;
+	top: 37px;
 }
 
 .icon-pdf-file[data-file="3"] {
 	background-position: -704px -406px;
-	right: 320px;
-	top: 104px;
+	right: 290px;
+	top: 100px;
 }
 
 .icon-pdf-file[data-file="4"] {
 	background-position: -1034px -406px;
-	right: 42px;
-	top: 72px;
+	right: 8px;
+	top: 65px;
 }
 
 .icon-pdf-file[data-file="5"] {
 	background-position: -44px -30px;
-	left: 75px;
-	top: 100px;
+	left: 50px;
+	top: 65px;
 }
 
 .icon-pdf-file[data-file="6"] {
 	background-position: -372px -30px;
-	left: 470px;
-	top: 62px;
+	left: 431px;
+	top: 50px;
 }
 
-.wrapper-pdf-files .icon-pdf-file[data-file="7"] {
+.icon-pdf-file[data-file="7"] {
 	background-position: -704px -30px;
-	right: 75px;
-	top: 118px;
+	right: 37px;
+	top: 67px;
 }
 
-.wrapper-pdf-files .icon-pdf-file[data-file="8"] {
+.icon-pdf-file[data-file="8"] {
 	background-position: -1034px -30px;
-	left: 260px;
+	left: 194px;
 	top: 425px;
 }
 
-.wrapper-pdf-files .icon-pdf-file[data-file="9"] {
+.icon-pdf-file[data-file="9"] {
 	background-position: -1396px -30px;
-	right: 260px;
-	top: 432px;
+	right: 228px;
+	top: 430px;
 }
